@@ -171,29 +171,30 @@ class ProfilesFragment : ToolbarFragment(), Toolbar.OnMenuItemClickListener {
                 if (selectedItem === this) selectedItem = null
             }
 
-            var adView = adView
-            if (item.host == "198.199.101.152") {
-                if (adView == null) {
-                    val params =
-                            LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-                    params.gravity = Gravity.CENTER_HORIZONTAL
-                    val context = context!!
-                    adView = AdView(context)
-                    adView.layoutParams = params
-                    adView.adUnitId = "ca-app-pub-9097031975646651/7760346322"
-                    adView.adSize = AdSize.FLUID
-                    val padding = context.resources.getDimensionPixelOffset(R.dimen.profile_padding)
-                    adView.setPadding(padding, 0, 0, padding)
-
-                    itemView.findViewById<LinearLayout>(R.id.content).addView(adView)
-
-                    // Load Ad
-                    val adBuilder = AdRequest.Builder()
-                    adBuilder.addTestDevice("B08FC1764A7B250E91EA9D0D5EBEB208")
-                    adView.loadAd(adBuilder.build())
-                    this.adView = adView
-                } else adView.visibility = View.VISIBLE
-            } else if (adView != null) adView.visibility = View.GONE
+            //XXX remove adView
+//            var adView = adView
+//            if (item.host == "198.199.101.152") {
+//                if (adView == null) {
+//                    val params =
+//                            LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+//                    params.gravity = Gravity.CENTER_HORIZONTAL
+//                    val context = context!!
+//                    adView = AdView(context)
+//                    adView.layoutParams = params
+//                    adView.adUnitId = "ca-app-pub-9097031975646651/7760346322"
+//                    adView.adSize = AdSize.FLUID
+//                    val padding = context.resources.getDimensionPixelOffset(R.dimen.profile_padding)
+//                    adView.setPadding(padding, 0, 0, padding)
+//
+//                    itemView.findViewById<LinearLayout>(R.id.content).addView(adView)
+//
+//                    // Load Ad
+//                    val adBuilder = AdRequest.Builder()
+//                    adBuilder.addTestDevice("B08FC1764A7B250E91EA9D0D5EBEB208")
+//                    adView.loadAd(adBuilder.build())
+//                    this.adView = adView
+//                } else adView.visibility = View.VISIBLE
+//            } else if (adView != null) adView.visibility = View.GONE
         }
 
         override fun onClick(v: View?) {
